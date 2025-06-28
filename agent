@@ -1,0 +1,8 @@
+from langchain.agents import initialize_agent, AgentType
+
+agent = initialize_agent(
+    tools=[tool1, tool2, tool3],
+    llm=ChatOpenAI(model="gpt-4"),
+    agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
+    memory=ConversationBufferMemory()
+)
