@@ -1,0 +1,10 @@
+from langchain.vectorstores import FAISS
+from langchain.embeddings import OpenAIEmbeddings
+import requests
+
+def get_weather(city: str):
+    resp = requests.get(f"https://wttr.in/{city}?format=3")
+    return resp.text
+def analyze_sentiment(text: str):
+    # 简单情绪分析示例
+    return "Positive" if "good" in text else "Negative"
